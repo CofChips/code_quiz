@@ -47,14 +47,13 @@
         </div>
 
 
-    <div class="jumbotron bg-white my-auto" id="questionScreen" style="display: none; width: 800px; margin: auto auto; padding-top: 15%;">
-        <h1 id="question">Placeholder</h1>
-        <!-- <p class="lead text-center">Try to answer the following code-related questions within the time<br/>limit. Keep in mind that incorrect answers will penalize your scoretime<br/>by ten seconds!</p> -->
+    <div class="jumbotron bg-white" id="questionScreen" style="display: none; padding-top: 15%;">
+        <h1 id="question" class= "mb-5">Placeholder</h1>
         <p class="lead">
-          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
-          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
-          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
-          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton4">Placeholder 4</a>
+          <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
+          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
+          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
+          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton4">Placeholder 4</a>
         </p>
         <div class="border-top" style="display: none;" id="answerResult">
           <span> &#10004; </span> Correct!
@@ -64,23 +63,33 @@
         </div>
     </div>
 
-    <div class="jumbotron bg-white my-auto text-center" id="gameOverScreen" style="display: none; width: 800px; margin: auto auto; padding-top: 15%;">
+    <div class="jumbotron bg-white text-center" id="gameOverScreen" style="display: none; padding-top: 15%;">
       <h1>All done!</h1>
       <p class="lead text-center" id="finalScore">Placeholder!</p>
-      <form class="form-inline">
-        <div class="form-group mb-2">
-          <label for="staticInitials" class="sr-only">Initials</label>
-          <input type="text" readonly class="form-control-plaintext" id="staticInitials" value="Enter initials:" style="text-align: right;">
+
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-2">
+          </div>
+          <div class="col-2">
+            <label class="form-check-label" for="inputInitials" id="staticInitials">
+              Enter Initials:
+            </label>
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id = "inputInitials" placeholder="Initials">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary mb-2" id="initialsButton">Submit</button>
+          </div>
+          <div class="col-2">
+          </div>
         </div>
-        <div class="form-group mx-sm-3 mb-2" id="form" style="width: 350px;">
-          <label for="inputInitials" class="sr-only">Initials</label>
-          <input type="text" class="form-control w-100" id="inputInitials" placeholder="Initials">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2" id="initialsButton">Submit</button>
       </form>
+     
     </div>
 
-    <div class="jumbotron bg-white my-auto" id="highScoreScreen" style="display: none; width: 800px; margin: auto auto; padding-top: 15%;">
+    <div class="jumbotron bg-white my-auto" id="highScoreScreen" style="display: none; padding-top: 15%;">
       <h1>High Scores</h1>
       <ol id="highscore-list" class="list-group-primary">
       </ol>
