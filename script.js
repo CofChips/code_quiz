@@ -20,11 +20,16 @@ var answerResult2 = document.querySelector("#answerResult2");
 var form = document.querySelector("#form");
 
 var questions = [
-    {q : "This is question 1", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "t"},
-    {q : "This is question 2", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "f2"},
-    {q : "This is question 3", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "f3"},
-    {q : "This is question 4", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "t"},
-    {q : "This is question 5", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "f1"}
+    {q : "What is the title of LeVert's 1987 hit song?", a1 : "Casanova" , a2 : "You Make Me Feel Brand New" , a3 : "September" , a4 : "One Sweet Day", correct: "Casanova"},
+    {q : "How many BeeGees' singles have reached #1 on the Hot 100 chart?", a1 : "8" , a2 : "9" , a3 : "12" , a4 : "15", correct: "9"},
+    {q : "What is Mariah Carey's middle name?", a1 : "Allison" , a2 : "Amanda" , a3 : "Denise" , a4 : "Angela", correct: "Angela"},
+    {q : "What nickname does Lizzo use to affectionately refer to her fans?", a1 : "Lizbians" , a2 : "Lizonauts" , a3 : "Zo's" , a4 : "Lizottos", correct: "Lizbians"},
+    {q : "What group sang Betcha By Golly Wow?", a1 : "Chi-lites" , a2 : "The Stylistics" , a3 : "Earth, Wind & Fire" , a4 : "Kool and the Gang", correct: "The Stylistics"},
+    {q : "What is the name of the supergroup formed by Dolly Parton, Linda Ronstadt, and Emmylou Harris?", a1 : "Triple" , a2 : "Us" , a3 : "Trio" , a4 : "DoLiEm", correct: "Trio"},
+    {q : "Which Beatle wrote the 1969 hit Something?", a1 : "Paul McCartney" , a2 : "John Lennon" , a3 : "Ringo Starr" , a4 : "George Harrison", correct: "George Harrison"},
+    {q : "Who sang the original version of Without You?", a1 : "Harry Nilsson" , a2 : "Badfinger" , a3 : "Mariah Carey" , a4 : "T-Rex", correct: "Badfinger"},
+    {q : "What sitcom was loosely based on a life experience of Harry Styles?", a1 : "The Office" , a2 : "You" , a3 : "Happy Together" , a4 : "Young and Hungry", correct: "Happy Together"},
+    {q : "Where was Tupac Shakur born?", a1 : "New York City" , a2 : "Oakland" , a3 : "Atlanta" , a4 : "Compton", correct: "New York City"},
 ];
 
 // this is the countdown start number
@@ -57,7 +62,7 @@ function gameTimer() {
         gameOverScreen.style.display = "block";
         finalScore.textContent = "Your final score is: " + gameScore;
         highScoreEl.style.display = "block";
-      }
+         }
     }, 1000);
     }
 
@@ -89,10 +94,12 @@ questionScreen.style.display = "none";
 function a1Compare(){
     if (questions[questionNumber].a1 === questions[questionNumber].correct){
         gameScore+=5;
+        answerResult.style.display = "none";
         answerResult.style.display = "block";
         setTimeout(function () {answerResult.style.display = "none";}, 1000);
     }
     else {
+        answerResult2.style.display = "none";
         answerResult2.style.display = "block";
         setTimeout(function () {answerResult2.style.display = "none";}, 1000);
         if(secondsLeft>=10){
@@ -111,10 +118,12 @@ function a1Compare(){
 function a2Compare(){
     if (questions[questionNumber].a2 === questions[questionNumber].correct){
         gameScore+=5;
+        answerResult.style.display = "none";
         answerResult.style.display = "block";
         setTimeout(function () {answerResult.style.display = "none";}, 1000);
     }
     else {
+        answerResult2.style.display = "none";
         answerResult2.style.display = "block";
         setTimeout(function () {answerResult2.style.display = "none";}, 1000);
         if (secondsLeft>=10){
@@ -132,10 +141,12 @@ function a2Compare(){
 function a3Compare(){
     if (questions[questionNumber].a3 === questions[questionNumber].correct){
         gameScore+=5;
+        answerResult.style.display = "none";
         answerResult.style.display = "block";
         setTimeout(function () {answerResult.style.display = "none";}, 1000);
     }
     else {
+        answerResult2.style.display = "none";
         answerResult2.style.display = "block";
         setTimeout(function () {answerResult2.style.display = "none";}, 1000);
         if (secondsLeft>=10){
@@ -153,10 +164,12 @@ function a3Compare(){
 function a4Compare(){
     if (questions[questionNumber].a4 === questions[questionNumber].correct){
         gameScore+=5;
+        answerResult.style.display = "none";
         answerResult.style.display = "block";
         setTimeout(function () {answerResult.style.display = "none";}, 1000);
     }
     else {
+        answerResult2.style.display = "none";
         answerResult2.style.display = "block";
         setTimeout(function () {answerResult2.style.display = "none";}, 1000);
         if (secondsLeft>=10){
