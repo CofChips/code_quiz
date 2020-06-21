@@ -22,7 +22,7 @@ var form = document.querySelector("#form");
 var questions = [
     {q : "What is the title of LeVert's 1987 hit song?", a1 : "Casanova" , a2 : "You Make Me Feel Brand New" , a3 : "September" , a4 : "One Sweet Day", correct: "Casanova"},
     {q : "How many BeeGees' singles have reached #1 on the Hot 100 chart?", a1 : "8" , a2 : "9" , a3 : "12" , a4 : "15", correct: "9"},
-    {q : "What is Mariah Carey's middle name?", a1 : "Allison" , a2 : "Amanda" , a3 : "Denise" , a4 : "Angela", correct: "Angela"},
+    {q : "What is Mariah Carey's middle name?", a1 : "Allison" , a2 : "She doesn't have one" , a3 : "Denise" , a4 : "Angela", correct: "She doesn't have one"},
     {q : "What nickname does Lizzo use to affectionately refer to her fans?", a1 : "Lizbians" , a2 : "Lizonauts" , a3 : "Zo's" , a4 : "Lizottos", correct: "Lizbians"},
     {q : "What group sang Betcha By Golly Wow?", a1 : "Chi-lites" , a2 : "The Stylistics" , a3 : "Earth, Wind & Fire" , a4 : "Kool and the Gang", correct: "The Stylistics"},
     {q : "What is the name of the supergroup formed by Dolly Parton, Linda Ronstadt, and Emmylou Harris?", a1 : "Triple" , a2 : "Us" , a3 : "Trio" , a4 : "DoLiEm", correct: "Trio"},
@@ -55,13 +55,14 @@ function startGame() {
 function gameTimer() {
     var timeInterval = setInterval(function(){
       secondsLeft --;
-      timeEl.textContent = "Time: " + secondsLeft;
+      timeEl.textContent = "Time: " + secondsLeft + " seconds";
       if (secondsLeft === 0 || secondsLeft<0 || questionNumber === questions.length) {
         clearInterval(timeInterval);
         questionScreen.style.display = "none";
         gameOverScreen.style.display = "block";
         finalScore.textContent = "Your final score is: " + gameScore;
         highScoreEl.style.display = "block";
+        timeEl.textContent = "Time: 0 seconds";
          }
     }, 1000);
     }
@@ -212,7 +213,7 @@ function goBack(){
     secondsLeft = 60;
     gameScore = 0;
     questionNumber = 0;
-    timeEl.textContent = "Time: 60";
+    timeEl.textContent = "Time: 60 seconds";
 }
 
 questionScreen.addEventListener("click", nextQuestion);
