@@ -48,19 +48,33 @@
 
 
     <div class="jumbotron bg-white" id="questionScreen" style="display: none; padding-top: 15%;">
-        <h1 id="question" class= "mb-5">Placeholder</h1>
-        <p class="lead">
-          <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
-          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
-          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
-          <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton4">Placeholder 4</a>
-        </p>
-        <div class="border-top" style="display: none;" id="answerResult">
-          <span> &#10004; </span> Correct!
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-8">
+            <h1 id="question" class= "mb-5">Placeholder</h1>
+            <p class="lead">
+              <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
+              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
+              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
+              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton4">Placeholder 4</a>
+            </p>
+            <div class="border-top" style="display: none;" id="answerResult">
+              <span> &#10004; </span> Correct!
+            </div>
+            <div class="border-top" style="display: none;" id="answerResult2">
+             <span>&#10060;</span> Wrong!
+            </div>
+          </div>
+          <div class="col-2">
+            
+          </div>
+          
         </div>
-        <div class="border-top" style="display: none;" id="answerResult2">
-         <span>&#10060;</span> Wrong!
-        </div>
+
+      </div>  
+      
     </div>
 
     <div class="jumbotron bg-white text-center" id="gameOverScreen" style="display: none; padding-top: 15%;">
