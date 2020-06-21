@@ -10,6 +10,8 @@ var answerButton2 = document.querySelector("#answerButton2");
 var answerButton3 = document.querySelector("#answerButton3");
 var answerButton4 = document.querySelector("#answerButton4");
 var initialsButton = document.querySelector("#initialsButton");
+var clearButton = document.querySelector("#clearButton");
+var goBackButton = document.querySelector("#goBackButton");
 var finalScore = document.querySelector("#finalScore");
 var inputInitials = document.querySelector("#inputInitials");
 var highScoreListEl = document.querySelector("#highscore-list");
@@ -166,17 +168,19 @@ function addPersonToHighScore(event) {
     console.log(highScoreList);
 }
 
+function clearHighScore(){
+    highScoreList="";
+    highScoreList=[];
+    console.log(highScoreList);
+}
 
-
-// function addPersonToList(event) {
-//     event.preventDefault();
-//     var name = nameEl.value;
-//     var li = document.createElement("li");
-//     li.id = people.length;
-//     li.innerHTML = name + " <button>edit</button>";
-//     people.push({ name: name });
-//     peopleListEl.append(li);
-
+function goBack(){
+    highScoreScreen.style.display = "none";
+    startScreen.style.display = "block";
+    secondsLeft = 60;
+    gameScore = 0;
+    questionNumber = 0;
+}
 
 questionScreen.addEventListener("click", nextQuestion);
 highScoreEl.addEventListener("click", highScore); 
@@ -185,3 +189,5 @@ answerButton2.addEventListener("click", a2Compare);
 answerButton3.addEventListener("click", a3Compare);
 answerButton4.addEventListener("click", a4Compare);
 initialsButton.addEventListener("click", addPersonToHighScore);
+clearButton.addEventListener("click", clearHighScore);
+goBackButton.addEventListener("click", goBack);
