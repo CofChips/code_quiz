@@ -17,6 +17,7 @@ var inputInitials = document.querySelector("#inputInitials");
 var highScoreListEl = document.querySelector("#highscore-list");
 var answerResult = document.querySelector("#answerResult");
 var answerResult2 = document.querySelector("#answerResult2");
+var form = document.querySelector("#form");
 
 var questions = [
     {q : "This is question 1", a1 : "t" , a2 : "f1" , a3 : "f2" , a4 : "f3", correct: "t"},
@@ -55,25 +56,19 @@ function gameTimer() {
         questionScreen.style.display = "none";
         gameOverScreen.style.display = "block";
         finalScore.textContent = "Your final score is: " + gameScore;
+        highScoreEl.style.display = "block";
       }
     }, 1000);
     }
 
 function displayQuestion () {
 if(questionNumber < questions.length){
-//     setTimeout ( function () { 
-//         questionScreen.style.display = "none";
-//         gameOverScreen.style.display = "block";
-//         finalScore.textContent = "Your final score is: " + gameScore;
-//         clearInterval(timeInterval);
-//     },1000);
-//    }
-// else{
 questionEl.textContent = questions[questionNumber].q;
 answerButton1.textContent = questions[questionNumber].a1;
 answerButton2.textContent = questions[questionNumber].a2;
 answerButton3.textContent = questions[questionNumber].a3;
 answerButton4.textContent = questions[questionNumber].a4;
+highScoreEl.style.display = "none";
 }
 }
 
@@ -89,7 +84,6 @@ highScoreScreen.style.display = "block";
 startScreen.style.display = "none";
 gameOverScreen.style.display = "none";
 questionScreen.style.display = "none";
-clearInterval(timeInterval);
 }
 
 function a1Compare(){
@@ -206,7 +200,6 @@ function goBack(){
     gameScore = 0;
     questionNumber = 0;
     timeEl.textContent = "Time: 60";
-    
 }
 
 questionScreen.addEventListener("click", nextQuestion);

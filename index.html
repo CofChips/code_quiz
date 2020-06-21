@@ -19,10 +19,12 @@
           top: 5%;
           left: 5%;
         }
+        
     </style>
     <title>Code Quiz</title>
   </head>
   <body>
+    <div class="container-fluid">
     <div id="highscore">
       <a href="#">
          View Highscores 
@@ -33,22 +35,24 @@
              Time: 60 
           </p>
     </div>
-    <div class="jumbotron bg-white" id="startScreen" style="padding-top: 15%;">
-        <h1 class="text-center">Code Quiz Challenge</h1>
-        <p class="lead text-center">Try to answer the following code-related questions within the time<br/>limit. Keep in mind that incorrect answers will penalize your scoretime<br/>by ten seconds!</p>
-        <p class="lead text-center">
-          <a class="btn btn-danger" href="#" role="button" id="startButton" onclick="startGame()">Start Quiz</a>
-        </p>
-    </div>
+
+        <div class="jumbotron bg-white" id="startScreen" style="padding-top: 15%;">
+          <h1 class="text-center">Code Quiz Challenge</h1>
+          <p class="lead text-center">Try to answer the following code-related questions within the time limit. <br/>Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
+          <p class="lead text-center">
+            <a class="btn btn-danger" href="#" role="button" id="startButton" onclick="startGame()">Start Quiz</a>
+          </p>
+        </div>
+
 
     <div class="jumbotron bg-white my-auto" id="questionScreen" style="display: none; width: 800px; margin: auto auto; padding-top: 15%;">
         <h1 id="question">Placeholder</h1>
         <!-- <p class="lead text-center">Try to answer the following code-related questions within the time<br/>limit. Keep in mind that incorrect answers will penalize your scoretime<br/>by ten seconds!</p> -->
         <p class="lead">
-          <a class="btn btn-danger my-3" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
-          <a class="btn btn-danger my-3" href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
-          <a class="btn btn-danger my-3" href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
-          <a class="btn btn-danger my-3" href="#" role="button" id="answerButton4">Placeholder 4</a>
+          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
+          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
+          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
+          <a class="btn btn-danger my-2" href="#" role="button" id="answerButton4">Placeholder 4</a>
         </p>
         <div class="border-top" style="display: none;" id="answerResult">
           Correct!
@@ -66,7 +70,7 @@
           <label for="staticInitials" class="sr-only">Initials</label>
           <input type="text" readonly class="form-control-plaintext" id="staticInitials" value="Enter initials:" style="text-align: right;">
         </div>
-        <div class="form-group mx-sm-3 mb-2" style="width: 350px;">
+        <div class="form-group mx-sm-3 mb-2" id="form" style="width: 350px;">
           <label for="inputInitials" class="sr-only">Initials</label>
           <input type="text" class="form-control w-100" id="inputInitials" placeholder="Initials">
         </div>
@@ -83,6 +87,7 @@
         <a class="btn btn-danger my-3" href="#" role="button" id="clearButton" style="width:130px;">Clear</a>
       </div>
     </div>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
