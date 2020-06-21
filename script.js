@@ -17,7 +17,7 @@ var inputInitials = document.querySelector("#inputInitials");
 var highScoreListEl = document.querySelector("#highscore-list");
 var answerResult = document.querySelector("#answerResult");
 var answerResult2 = document.querySelector("#answerResult2");
-var form = document.querySelector("#form");
+var initialsForm = document.querySelector("#initialsForm");
 
 var questions = [
     {q : "What is the title of LeVert's 1987 hit song?", a1 : "Casanova" , a2 : "You Make Me Feel Brand New" , a3 : "September" , a4 : "One Sweet Day", correct: "Casanova"},
@@ -196,6 +196,8 @@ function addPersonToHighScore(event) {
     highScoreListEl.append(li);
     highScoreScreen.style.display = "block";
     gameOverScreen.style.display = "none";
+    initialsForm.reset();
+
     console.log(highScoreList);
 }
 
@@ -215,6 +217,7 @@ function goBack(){
     questionNumber = 0;
     timeEl.textContent = "Time: 60 seconds";
 }
+
 
 questionScreen.addEventListener("click", nextQuestion);
 highScoreEl.addEventListener("click", highScore); 

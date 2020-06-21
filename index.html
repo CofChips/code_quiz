@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel= "icon" href= "stylistics_0Qi_icon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <style>
         #time{
             position: fixed;
@@ -19,6 +20,10 @@
           position: fixed;
           top: 5%;
           left: 5%;
+        }
+
+        h1 {
+          font-family: 'Sriracha', cursive;
         }
         
     </style>
@@ -53,7 +58,7 @@
           <div class="col-2">
           </div>
           <div class="col-8">
-            <h1 id="question" class= "mb-5">Placeholder</h1>
+            <h2 id="question" class= "mb-5">Placeholder</h2>
             <p class="lead">
               <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
               <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
@@ -68,7 +73,7 @@
             </div>
           </div>
           <div class="col-2">
-            
+
           </div>
           
         </div>
@@ -81,7 +86,7 @@
       <h1>All done!</h1>
       <p class="lead text-center" id="finalScore">Placeholder!</p>
 
-      <form>
+      <form id="initialsForm">
         <div class="form-row align-items-center">
           <div class="col-2">
           </div>
@@ -104,12 +109,22 @@
     </div>
 
     <div class="jumbotron bg-white my-auto" id="highScoreScreen" style="display: none; padding-top: 15%;">
-      <h1>High Scores</h1>
-      <ol id="highscore-list" class="list-group-primary">
-      </ol>
-      <div class="text-center">
-        <a class="btn btn-danger my-3 mr-5" href="#" role="button" id="goBackButton" style="width:130px;">Go Back</a>
-        <a class="btn btn-danger my-3" href="#" role="button" id="clearButton" style="width:130px;">Clear</a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+          </div>
+          <div class="col-6">
+            <h1 class="text-center">High Scores</h1>
+            <ol id="highscore-list" class="list-group-primary bg-secondary text-white">
+            </ol>
+            <div class="text-center">
+              <a class="btn btn-danger my-3 mr-5" href="#" role="button" id="goBackButton" style="width:130px;">Go Back</a>
+              <a class="btn btn-danger my-3" href="#" role="button" id="clearButton" style="width:130px;">Clear</a>
+            </div>
+            <div class="col-3">
+            </div>
+          </div>
+          </div>
       </div>
     </div>
   </div>
