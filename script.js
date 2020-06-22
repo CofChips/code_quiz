@@ -19,6 +19,7 @@ var answerResult = document.querySelector("#answerResult");
 var answerResult2 = document.querySelector("#answerResult2");
 var initialsForm = document.querySelector("#initialsForm");
 
+// these are the questions
 var questions = [
     {q : "What is the title of LeVert's 1987 hit song?", a1 : "Casanova" , a2 : "You Make Me Feel Brand New" , a3 : "September" , a4 : "One Sweet Day", correct: "Casanova"},
     {q : "How many BeeGees' singles have reached #1 on the Hot 100 chart?", a1 : "8" , a2 : "9" , a3 : "12" , a4 : "15", correct: "9"},
@@ -52,6 +53,7 @@ function startGame() {
     displayQuestion();
 }
 
+// game timer
 function gameTimer() {
     var timeInterval = setInterval(function(){
       secondsLeft --;
@@ -67,6 +69,7 @@ function gameTimer() {
     }, 1000);
     }
 
+// shows questions
 function displayQuestion () {
 if(questionNumber < questions.length){
 questionEl.textContent = questions[questionNumber].q;
@@ -78,13 +81,14 @@ highScoreEl.style.display = "none";
 }
 }
 
-
+// moves to next question when user clicks on an answer button
 function nextQuestion(event) {
     if (event.target.matches("a")) {
         questionNumber++;
         displayQuestion();}
     console.log(questionNumber);}
 
+// displays highscore screen
 function highScore(){
 highScoreScreen.style.display = "block";
 startScreen.style.display = "none";
@@ -92,6 +96,7 @@ gameOverScreen.style.display = "none";
 questionScreen.style.display = "none";
 }
 
+// comparison functions to validate selected answer button versus correct answer
 function a1Compare(){
     if (questions[questionNumber].a1 === questions[questionNumber].correct){
         gameScore+=5;
@@ -185,7 +190,7 @@ function a4Compare(){
     console.log("score: " + gameScore)
 }
 
-
+// creates entries in high score list
 function addPersonToHighScore(event) {
     event.preventDefault();
     var initials = inputInitials.value;
@@ -201,6 +206,7 @@ function addPersonToHighScore(event) {
     console.log(highScoreList);
 }
 
+// clears highscore list
 function clearHighScore(){
     for (var i = 0; i < (highScoreList.length+1); i++){
     highScoreListEl.removeChild(highScoreListEl.childNodes[0]);};
@@ -209,6 +215,7 @@ function clearHighScore(){
     console.log(highScoreList);
 }
 
+// returns user to start screen
 function goBack(){
     highScoreScreen.style.display = "none";
     startScreen.style.display = "block";

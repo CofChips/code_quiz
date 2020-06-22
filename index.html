@@ -15,43 +15,46 @@
             top: 5%;
             right: 5%;
         }
-        
         #highscore{
           position: fixed;
           top: 5%;
           left: 5%;
         }
-
         h1 {
           font-family: 'Sriracha', cursive;
-        }
-        
+        }      
     </style>
     <title>Random Music Quiz</title>
   
   </head>
   <body>
     <div class="container-fluid">
+    <!-- element for viewing highscores - does not display when quiz is in progress -->
     <div id="highscore">
       <a href="#">
          View Highscores 
       </a>
     </div>  
+    <!-- timer element -->
     <div id="time">
           <p>
              Time: 60 seconds
           </p>
     </div>
 
+    <!-- start screen -->
+
         <div class="jumbotron bg-white" id="startScreen" style="padding-top: 15%;">
-          <h1 class="text-center">Random Music Quiz Challenge</h1>
+          <header>
+            <h1 class="text-center">Random Music Quiz Challenge</h1>
+          </header>
           <p class="lead text-center">Try to answer the following music-related questions within the time limit. <br/>Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
           <p class="lead text-center">
             <a class="btn btn-danger" href="#" role="button" id="startButton" onclick="startGame()">Start Quiz</a>
           </p>
         </div>
 
-
+    <!-- question screen -->
     <div class="jumbotron bg-white" id="questionScreen" style="display: none; padding-top: 15%;">
       <div class="container-fluid">
         <div class="row">
@@ -73,19 +76,19 @@
             </div>
           </div>
           <div class="col-2">
-
           </div>
-          
         </div>
-
-      </div>  
-      
+      </div> 
     </div>
 
+    <!-- game over screen -->
     <div class="jumbotron bg-white text-center" id="gameOverScreen" style="display: none; padding-top: 15%;">
-      <h1>All done!</h1>
+      <header>
+        <h1>All done!</h1>
+      </header>
+      <!-- displays final score -->
       <p class="lead text-center" id="finalScore">Placeholder!</p>
-
+      <!-- form for entering initials -->
       <form id="initialsForm">
         <div class="form-row align-items-center">
           <div class="col-2">
@@ -108,13 +111,16 @@
      
     </div>
 
+    <!-- highscore screen -->
     <div class="jumbotron bg-white my-auto" id="highScoreScreen" style="display: none; padding-top: 15%;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-3">
           </div>
           <div class="col-6">
-            <h1 class="text-center">High Scores</h1>
+            <header>
+              <h1 class="text-center">High Scores</h1>
+            </header>
             <ol id="highscore-list" class="list-group-primary bg-secondary text-white">
             </ol>
             <div class="text-center">
