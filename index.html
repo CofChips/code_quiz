@@ -1,58 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel= "icon" href= "stylistics_0Qi_icon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
-    <style>
-        #time{
-            position: fixed;
-            top: 5%;
-            right: 5%;
-        }
-        #highscore{
-          position: fixed;
-          top: 5%;
-          left: 5%;
-        }
-        h1 {
-          font-family: 'Sriracha', cursive;
-        }      
-    </style>
-    <title>Random Music Quiz</title>
-  
-  </head>
-  <body>
-    <div class="container-fluid">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="icon" href="stylistics_0Qi_icon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+  <style>
+    #time {
+      position: fixed;
+      top: 5%;
+      right: 5%;
+    }
+
+    #highscore {
+      position: fixed;
+      top: 5%;
+      left: 5%;
+    }
+
+    h1 {
+      font-family: 'Sriracha', cursive;
+    }
+  </style>
+  <title>Random Music Quiz</title>
+
+</head>
+
+<body>
+  <div class="container-fluid">
     <!-- element for viewing highscores - does not display when quiz is in progress -->
     <div id="highscore">
       <a href="#">
-         View Highscores 
+        View Highscores
       </a>
-    </div>  
+    </div>
     <!-- timer element -->
     <div id="time">
-          <p>
-             Time: 60 seconds
-          </p>
+      <p>
+        Time: 60 seconds
+      </p>
     </div>
 
     <!-- start screen -->
 
-        <div class="jumbotron bg-white" id="startScreen" style="padding-top: 15%;">
-          <header>
-            <h1 class="text-center">Random Music Quiz Challenge</h1>
-          </header>
-          <p class="lead text-center">Try to answer the following music-related questions within the time limit. <br/>Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
-          <p class="lead text-center">
-            <a class="btn btn-danger" href="#" role="button" id="startButton" onclick="startGame()">Start Quiz</a>
-          </p>
-        </div>
+    <div class="jumbotron bg-white" id="startScreen" style="padding-top: 15%;">
+      <header>
+        <h1 class="text-center">Random Music Quiz Challenge</h1>
+      </header>
+      <p class="lead text-center">Try to answer the following music-related questions within the time limit. <br />Keep
+        in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
+      <p class="lead text-center">
+        <a class="btn btn-danger" href="#" role="button" id="startButton" onclick="startGame()">Start Quiz</a>
+      </p>
+    </div>
 
     <!-- question screen -->
     <div class="jumbotron bg-white" id="questionScreen" style="display: none; padding-top: 15%;">
@@ -61,24 +67,25 @@
           <div class="col-2">
           </div>
           <div class="col-8">
-            <h2 id="question" class= "mb-5">Placeholder</h2>
+            <h2 id="question" class="mb-5">Placeholder</h2>
             <p class="lead">
-              <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder 1</a><br/>
-              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br/>
-              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton3">Placeholder 3</a><br/>
+              <a class="btn btn-secondary btn-block mt-2" href="#" role="button" id="answerButton1">Placeholder
+                1</a><br />
+              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton2">Placeholder 2</a><br />
+              <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton3">Placeholder 3</a><br />
               <a class="btn btn-secondary btn-block " href="#" role="button" id="answerButton4">Placeholder 4</a>
             </p>
             <div class="border-top" style="display: none;" id="answerResult">
               <span> &#10004; </span> Correct!
             </div>
             <div class="border-top" style="display: none;" id="answerResult2">
-             <span>&#10060;</span> Wrong!
+              <span>&#10060;</span> Wrong!
             </div>
           </div>
           <div class="col-2">
           </div>
         </div>
-      </div> 
+      </div>
     </div>
 
     <!-- game over screen -->
@@ -99,7 +106,7 @@
             </label>
           </div>
           <div class="col-4">
-            <input type="text" class="form-control" id = "inputInitials" placeholder="Initials">
+            <input type="text" class="form-control" id="inputInitials" placeholder="Initials">
           </div>
           <div class="col-2">
             <button type="submit" class="btn btn-primary mb-2" id="initialsButton">Submit</button>
@@ -108,7 +115,7 @@
           </div>
         </div>
       </form>
-     
+
     </div>
 
     <!-- highscore screen -->
@@ -124,22 +131,30 @@
             <ol id="highscore-list" class="list-group-primary bg-secondary text-white">
             </ol>
             <div class="text-center">
-              <a class="btn btn-danger my-3 mr-5" href="#" role="button" id="goBackButton" style="width:130px;">Go Back</a>
+              <a class="btn btn-danger my-3 mr-5" href="#" role="button" id="goBackButton" style="width:130px;">Go
+                Back</a>
               <a class="btn btn-danger my-3" href="#" role="button" id="clearButton" style="width:130px;">Clear</a>
             </div>
             <div class="col-3">
             </div>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
