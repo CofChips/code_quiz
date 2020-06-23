@@ -43,11 +43,18 @@ var questionNumber = 0;
 var gameScore = 0;
 
 // var highScoreList = localStorage.getItem("highScoreList") || [];
-var highScoreList = JSON.parse(localStorage.getItem("highScoreList"));
-if (!Array.isArray(highScoreList)) {
-    highScoreList = [];
-}
+var highScoreList = [];
 
+init();
+
+// populates highScoreList with localStorage if there are values and populates the high score screen
+function init() {
+    var storedHighScore = JSON.parse(localStorage.getItem("highScoreList"));
+    if (storedHighScore !== null) {
+        highScoreList = storedHighScore;
+    }
+    repopulateHighScore();
+}
 
 // from start screen to question screen + kicks off timer and displays first question
 function startGame() {
@@ -205,8 +212,8 @@ function a4Compare() {
 function addPersonToHighScore(event) {
     event.preventDefault();
     var initials = inputInitials.value.trim();
-    highScoreList.push({initials: initials,score: gameScore});
-    inputInitials.value="";
+    highScoreList.push({ initials: initials, score: gameScore });
+    inputInitials.value = "";
     localStorage.setItem("highScoreList", JSON.stringify(highScoreList))
     repopulateHighScore();
     // initialsForm.reset();
@@ -230,11 +237,9 @@ function repopulateHighScore() {
 function clearHighScore() {
     localStorage.clear();
     highScoreListEl.innerHTML = "";
-    highScoreList = JSON.parse(localStorage.getItem("highScoreList"));
-    if (!Array.isArray(highScoreList)) {
-        highScoreList = [];
-    }
+    highScoreList = [];
 }
+
 
 // returns user to start screen
 function goBack() {
