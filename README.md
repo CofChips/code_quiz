@@ -27,7 +27,7 @@ THEN I can save my initials and score
 There were several key areas to focus on in this project:
 1) Creating a visually pleasing, responsive layout
 2) Displaying different objects and "screens"
-3) Creating a high score list that stores names
+3) Creating a high score list that is kept in localstorage
 
 ### Layout and design
 
@@ -81,9 +81,35 @@ function goBack(){
 }
 ```
 
-### aaa
+### High Score List
 
+To add entries into the high score list, user entries are added to localStorage and retrieved as follows:
 
+```
+// creates entries in high score list
+function addPersonToHighScore(event) {
+    event.preventDefault();
+    var initials = inputInitials.value.trim();
+    highScoreList.push({ initials: initials, score: gameScore });
+    localStorage.setItem("highScoreList", JSON.stringify(highScoreList))
+    repopulateHighScore();
+    initialsForm.reset();
+    console.log(highScoreList);
+}
+
+function repopulateHighScore() {
+    highScoreListEl.innerHTML = "";
+    console.log(highScoreList);
+    for (var i = 0; i < highScoreList.length; i++) {
+        var currentIndex = highScoreList[i];
+        var li = document.createElement("li");
+        li.innerHTML = currentIndex.initials + " - " + highScoreList[i].score;
+        highScoreListEl.append(li);
+    }
+    highScoreScreen.style.display = "block";
+    gameOverScreen.style.display = "none";
+}
+```
 
 ## Built With
 

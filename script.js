@@ -204,17 +204,12 @@ function a4Compare() {
 // creates entries in high score list
 function addPersonToHighScore(event) {
     event.preventDefault();
-    var initials = inputInitials.value;
-    // var li = document.createElement("li");
-    // li.id = highScoreList.length;
-    // li.innerHTML = initials + " - " + gameScore;
-    highScoreList.push({ initials: initials, score: gameScore });
+    var initials = inputInitials.value.trim();
+    highScoreList.push({initials: initials,score: gameScore});
+    inputInitials.value="";
     localStorage.setItem("highScoreList", JSON.stringify(highScoreList))
     repopulateHighScore();
-    // highScoreListEl.append(li);
-    // highScoreScreen.style.display = "block";
-    // gameOverScreen.style.display = "none";
-    initialsForm.reset();
+    // initialsForm.reset();
     console.log(highScoreList);
 }
 
@@ -224,7 +219,6 @@ function repopulateHighScore() {
     for (var i = 0; i < highScoreList.length; i++) {
         var currentIndex = highScoreList[i];
         var li = document.createElement("li");
-        // li.id = highScoreList[i];
         li.innerHTML = currentIndex.initials + " - " + highScoreList[i].score;
         highScoreListEl.append(li);
     }
@@ -232,20 +226,14 @@ function repopulateHighScore() {
     gameOverScreen.style.display = "none";
 }
 
-// clears highsc)ore list
+// clears highscore list
 function clearHighScore() {
-    // for (var i = 0; i < (highScoreList.length + 1); i++) {
-    //     highScoreListEl.removeChild(highScoreListEl.childNodes[0]);
-    // };
     localStorage.clear();
     highScoreListEl.innerHTML = "";
     highScoreList = JSON.parse(localStorage.getItem("highScoreList"));
     if (!Array.isArray(highScoreList)) {
         highScoreList = [];
     }
-    // // highScoreList="";
-    // highScoreList=[];
-    // console.log(highScoreList);
 }
 
 // returns user to start screen
