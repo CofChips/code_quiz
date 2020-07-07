@@ -216,6 +216,7 @@ function addPersonToHighScore(event) {
     inputInitials.value = "";
     localStorage.setItem("highScoreList", JSON.stringify(highScoreList))
     repopulateHighScore();
+    highScoreScreen.style.display = "block";
     // initialsForm.reset();
     console.log(highScoreList);
 }
@@ -229,7 +230,7 @@ function repopulateHighScore() {
         li.innerHTML = currentIndex.initials + " - " + highScoreList[i].score;
         highScoreListEl.append(li);
     }
-    highScoreScreen.style.display = "block";
+    // highScoreScreen.style.display = "block";
     gameOverScreen.style.display = "none";
 }
 
